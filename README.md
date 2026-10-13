@@ -61,6 +61,16 @@ Short notes on what I learned each week, including mistakes. Newest first.
 
 - *Week 1 (5 to 11 Oct):* set up uv, VS Code, Git and SSH; first push to GitHub.
 
+### Milestone 1 plan (Python version of my AFL Shiny app)
+
+- **Question:** Does AFL scoring drop after the first six rounds of the home-and-away season, and how consistently has that held from 2016 to 2025?
+- **Dataset:** Home-and-away match results for 2016 to 2025 from [AFL Tables](https://afltables.com), pulled with the [fitzRoy](https://github.com/jimmyday12/fitzRoy) R package and saved as `afl_match_data.csv` (one row per match). Finals are excluded; Opening Round matches are coded as Round 0.
+- **Results to reproduce:**
+  1. Early (Rounds 0 to 6) vs rest-of-season average points per team for every season, with the drop and how many seasons show early scoring higher.
+  2. The full early vs rest summary for 2025: games, average team score, average combined score, average winning margin, % of games with a 100+ score, and highest combined score.
+- **Chart:** Paired bars by season comparing early-season and rest-of-season average points per team.
+- **Repository:** `afl-early-season-scoring-r-to-python`
+
 ## Principles
 
 - **Translate, do not restart.** Every exercise maps to something I already do in R, so I can check the answers.
