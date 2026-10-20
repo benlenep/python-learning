@@ -14,7 +14,7 @@ Everything here uses public or simulated data.
 
 | # | Milestone | Due | Status |
 | --- | --- | --- | --- |
-| 1 | Foundations: tooling, Git workflow, first notebook reproducing an R analysis | 18 Oct | [ ] |
+| 1 | Foundations: tooling, Git workflow, first notebook reproducing an R analysis | 18 Oct | [Complete] |
 | 2 | R and Python parity: the same public-data analysis in both languages, with tests confirming the outputs match | 8 Nov | [ ] |
 | 3 | Lapse modelling: survival and gradient boosting models on a simulated membership book, with a time-based backtest | 6 Dec | [ ] |
 | 4 | Forecasting pipeline: tested, scheduled, with automated checks and a live app | 20 Dec | [ ] |
