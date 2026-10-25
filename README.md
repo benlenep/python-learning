@@ -71,6 +71,25 @@ Short notes on what I learned each week, including mistakes. Newest first.
 - **Chart:** Paired bars by season comparing early-season and rest-of-season average points per team.
 - **Repository:** `afl-early-season-scoring-r-to-python`
 
+### Milestone 2 plan (R and Python pipeline parity, due 8 Nov)
+
+- **Question:** Can the data pipeline behind my AFL early-season scoring dashboard be rebuilt in Python so that every output matches the original R version exactly, with automated tests proving it?
+- **Dataset:** Raw home-and-away and finals results for 2016 to 2025 from [AFL Tables](https://afltables.com), pulled once with the [fitzRoy](https://github.com/jimmyday12/fitzRoy) R package and saved as `data/raw_results.csv`, so both languages read an identical input. fitzRoy checked on 25 Oct: 2025 returned 207 regular-season and 9 finals matches, with a 4-game Opening Round.
+- **Pipeline steps to reproduce:**
+  1. Keep home-and-away matches only (drop finals)
+  2. Detect Opening Round seasons (a Round 1 with fewer than 7 games) and recode them: Opening Round becomes Round 0, later rounds shift down by 1
+  3. Build the match table: nicknames, scores, combined and average team score, margin, winner or draw, 100+ flags, season phase
+  4. Summarise by season and round, and by season and phase (early Rounds 0 to 6 vs rest of season)
+- **Outputs to match:**
+  1. `match_data`: one row per match, 17 columns
+  2. `round_summary`: one row per season and round
+  3. `phase_summary`: one row per season and phase
+- **Tests:** pytest parity tests comparing all three Python outputs with R's, plus unit tests on small hand-made inputs for finals filtering, Opening Round detection and recoding, and draws.
+- **Charts:** round-by-round average points per team for one season (coloured by phase) and a multi-season comparison, ported from the Shiny app to plotnine.
+- **Out of scope:** the Shiny interface, value boxes and the hand-compiled `afl_yearly_averages.csv`. Chart reference lines are calculated from match data instead.
+- **Quirks to keep for parity:** the match table labels the later phase "Mid/Late Season" while the summaries say "Rest of Season", and 2020 (shortened quarters) is included. Both match the original R code.
+- **Repository:** `afl-data-pipeline-r-to-python`
+
 ## Principles
 
 - **Translate, do not restart.** Every exercise maps to something I already do in R, so I can check the answers.
