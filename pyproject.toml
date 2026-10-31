@@ -10,6 +10,7 @@ requires-python = ">=3.13"
 dependencies = [
     "duckdb>=2.0.0",
     "pandas>=3.0.6",
+    "plotnine>=0.15.8",
 ]
 
 [project.scripts]
