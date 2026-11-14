@@ -15,7 +15,7 @@ Everything here uses public or simulated data.
 | # | Milestone | Due | Status |
 | --- | --- | --- | --- |
 | 1 | Foundations: tooling, Git workflow, first notebook reproducing an R analysis | 18 Oct | Complete |
-| 2 | R and Python parity: the same public-data analysis in both languages, with tests confirming the outputs match | 8 Nov | [ ] |
+| 2 | R and Python parity: the same public-data analysis in both languages, with tests confirming the outputs match | 8 Nov | Complete |
 | 3 | Lapse modelling: survival and gradient boosting models on a simulated membership book, with a time-based backtest | 6 Dec | [ ] |
 | 4 | Forecasting pipeline: tested, scheduled, with automated checks and a live app | 20 Dec | [ ] |
 | 5 | Portfolio and write-up: portfolio page and an article on moving a lapse workflow from R to Python | 31 Dec | [ ] |
@@ -59,7 +59,8 @@ uv run python main.py
 
 Short notes on what I learned each week, including mistakes. Newest first.
 
-- *Week 1 (5 to 11 Oct):* set up uv, VS Code, Git and SSH; first push to GitHub.
+- *Week 1 (5 to 11 Oct):* set up uv, VS Code, Git and SSH; first push to GitHub. 
+- *Weeks 3 to 6 (19 Oct to 14 Nov):* Milestone 2: ported the data pipeline behind my AFL dashboard from R to Python ([repository](https://github.com/benlenep/afl-data-pipeline-r-to-python)). pytest parity tests prove all three outputs match R exactly, and the port surfaced a naming bug in my original R code. Biggest lessons: dplyr's `mutate` sees columns it has just created while pandas doesn't, missing values never equal each other, and an average of round averages is not a season average. Also learned DuckDB, plotnine, pytest and committing from VS Code. About a week behind plan; Milestone 3 starts next.
 
 ### Milestone 1 plan (Python version of my AFL Shiny app)
 
