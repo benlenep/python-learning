@@ -1,0 +1,8 @@
+"term","estimate"
+"(Intercept)",0.101782413267048
+"age",-0.0215229305704407
+"tenure_years",-0.152854665529386
+"tiermid",-0.247956376215407
+"tiertop",-0.576266005831591
+"channelbroker",0.478402841998556
+"channelonline",0.600678108642434
